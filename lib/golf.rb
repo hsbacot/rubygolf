@@ -16,4 +16,8 @@ class Golf
   def self.hole3(n)
     (1..n).to_a.reduce(1){|i,a|a*i}
   end
+
+  def self.hole6(n)
+    (1..n).map{|i|{0=>'fizzbuzz',1=>'buzz',2=>'fizz',3=>i}[[i%15,i%5,i%3,0].index(0)]}
+  end
 end
