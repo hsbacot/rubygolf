@@ -20,4 +20,8 @@ class Golf
   def self.hole6(n)
     (1..n).map{|i|{0=>'fizzbuzz',1=>'buzz',2=>'fizz',3=>i}[[i%15,i%5,i%3,0].index(0)]}
   end
+
+  def self.hole8(n)
+    a=[1,1];(1..n-2).map{|i|a<<a[-1]+a[-2]}
+  end
 end
