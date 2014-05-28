@@ -25,7 +25,7 @@ class Golf
     a=[1,1];(1..n-2).map{|i|a<<a[-1]+a[-2]}
   end
   
-  def self.hole4(a)
+  def self.hole4 a
     a.map do |e|
       f = "hat(#{e})" if e =~ /man/
       f = "#{e[0..-2]}(bone))" if e =~ /dog/
