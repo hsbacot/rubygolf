@@ -40,5 +40,19 @@ class Golf
       f
     end
   end
+  
+  def self.hole7 a
+    f = []
+    a.each_with_index do |e, i|
+      puts "#{e}-#{a[i+2]}"
+      puts "z = #{(e+2)}"
+      if (a[i+2] && a[i+2] <= e+2)
+        f << "#{e}-#{a[i+2]}" 
+      elsif !a.any? { |w| w == e-1 || w == e+1 }
+        f << e.to_s
+      end
+    end
+    f
+  end
 end
 
