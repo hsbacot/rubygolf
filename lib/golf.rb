@@ -27,7 +27,9 @@ class Golf
   end
 
   def self.hole8(n)
-    a=[1,1];(1..n-2).map{|i|a<<a[-1]+a[-2]}
+    a=[1,1]
+    (1..n-2).map{|i|a<<a[-1]+a[-2]}
+    a
   end
   
   def self.hole4 a
