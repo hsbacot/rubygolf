@@ -17,7 +17,7 @@ class Golf
     (1..n).to_a.reduce(1){|i,a|a*i}
   end
 
-  def self.hole9(s)
+  def self.hole9 s
     s.gsub!(/[a-zA-z]{10,}/) { |w| w[0..3] + "..." + w[-3..-1] } if s.size > 10
     s
   end
