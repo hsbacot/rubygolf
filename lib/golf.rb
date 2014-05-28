@@ -31,7 +31,17 @@ class Golf
     (1..n-2).map{|i|a<<a[-1]+a[-2]}
     a
   end
-  
+
+  # I figured out hole 7 but only after the competition was over! :( :(
+  def self.hole7(arr)
+    r=[]
+    f=nil
+
+    arr.each_cons(2){|i| a,b=*i ; a+1 !=b ? (f.nil? ? (r << a.to_s) && f=nil : (r<<"#{f}-#{a}" && f=nil)) : f||=a }
+    r<<"#{f}-#{arr[-1]}"
+    r
+  end
+
   def self.hole4 a
     a.map do |e|
       f = "hat(#{e})" if e =~ /man/
@@ -39,20 +49,6 @@ class Golf
       f = e.sub("cat", "dead") if e =~ /cat/
       f
     end
-  end
-  
-  def self.hole7 a
-    f = []
-    a.each_with_index do |e, i|
-      puts "#{e}-#{a[i+2]}"
-      puts "z = #{(e+2)}"
-      if (a[i+2] && a[i+2] <= e+2)
-        f << "#{e}-#{a[i+2]}" 
-      elsif !a.any? { |w| w == e-1 || w == e+1 }
-        f << e.to_s
-      end
-    end
-    f
   end
 end
 
