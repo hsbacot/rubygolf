@@ -26,14 +26,12 @@ class Golf
   end
   
   def self.hole4(a)
-    r = []
-    a.each do |e|
-      n = "hat(#{e})" if e =~ /man/
-      n = "#{e[0..-2]}(bone))" if e =~ /dog/
-      n = e.sub("cat", "dead") if e =~ /cat/
-      r << n
+    a.map do |e|
+      f = "hat(#{e})" if e =~ /man/
+      f = "#{e[0..-2]}(bone))" if e =~ /dog/
+      f = e.sub("cat", "dead") if e =~ /cat/
+      f
     end
-    r
   end
 end
 
